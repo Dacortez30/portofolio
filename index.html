@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Portfolio profesional - Landing page modern untuk menampilkan karya dan pengalaman">
-    <meta name="author" content="Portfolio Owner">
-    <title>Portfolio | Professional Landing Page</title>
+    <meta name="description" content="Full-Stack Developer Portfolio - Backend, Frontend, Database, DevOps">
+    <meta name="author" content="Jaffray - Full Stack Developer">
+    <title>Jaffray | Full-Stack Developer Portfolio</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,6 +17,7 @@
                 extend: {
                     colors: {
                         primary: '#6366f1',
+                        secondary: '#10b981',
                         dark: '#0f172a',
                     },
                     fontFamily: {
@@ -64,7 +65,6 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
         
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -82,7 +82,6 @@
             background: #818cf8;
         }
         
-        /* Glass morphism effect */
         .glass {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -101,6 +100,10 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
+        
+        .role-badge {
+            background: linear-gradient(135deg, #6366f1, #10b981);
+        }
     </style>
 </head>
 <body class="text-white">
@@ -108,13 +111,14 @@
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 w-full z-50 glass py-4 px-6 md:px-12 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
-                Portofolio<span class="text-white"></span>
+            <div class="text-2xl font-bold bg-gradient-to-r from-primary to-emerald-500 bg-clip-text text-transparent">
+                Jaffray<span class="text-white">.dev</span>
             </div>
             
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="hover:text-primary transition-colors duration-300">Beranda</a>
                 <a href="#about" class="hover:text-primary transition-colors duration-300">Tentang</a>
+                <a href="#skills" class="hover:text-primary transition-colors duration-300">Skills</a>
                 <a href="#projects" class="hover:text-primary transition-colors duration-300">Proyek</a>
                 <a href="#contact" class="hover:text-primary transition-colors duration-300">Kontak</a>
             </div>
@@ -124,10 +128,10 @@
             </button>
         </div>
         
-        <!-- Mobile menu -->
         <div class="md:hidden hidden mt-4 space-y-3 text-center" id="mobile-menu">
             <a href="#home" class="block py-2 hover:text-primary transition-colors">Beranda</a>
             <a href="#about" class="block py-2 hover:text-primary transition-colors">Tentang</a>
+            <a href="#skills" class="block py-2 hover:text-primary transition-colors">Skills</a>
             <a href="#projects" class="block py-2 hover:text-primary transition-colors">Proyek</a>
             <a href="#contact" class="block py-2 hover:text-primary transition-colors">Kontak</a>
         </div>
@@ -137,17 +141,26 @@
     <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
         <div class="max-w-6xl mx-auto text-center animate-fade-in">
             <div class="mb-8">
-                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-primary to-purple-600 flex items-center justify-center text-6xl font-bold mb-6 shadow-2xl animate-pulse-slow">
-                    <i class="fas fa-code text-white"></i>
+                <div class="w-32 h-32 mx-auto rounded-full role-badge flex items-center justify-center text-6xl font-bold mb-6 shadow-2xl animate-pulse-slow">
+                    <i class="fas fa-layer-group text-white"></i>
                 </div>
             </div>
             
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-primary to-purple-500 bg-clip-text text-transparent">
-                Halo, Saya <span class="text-white">Jaffray</span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-primary to-emerald-500 bg-clip-text text-transparent">
+                Jaffray<br>
+                <span class="text-white text-3xl md:text-4xl">Full-Stack Developer</span>
             </h1>
             
+            <div class="flex justify-center gap-3 mb-8 flex-wrap">
+                <span class="px-4 py-2 glass rounded-full text-sm"><i class="fas fa-code mr-2"></i>Frontend</span>
+                <span class="px-4 py-2 glass rounded-full text-sm"><i class="fas fa-database mr-2"></i>Backend</span>
+                <span class="px-4 py-2 glass rounded-full text-sm"><i class="fas fa-cloud mr-2"></i>DevOps</span>
+                <span class="px-4 py-2 glass rounded-full text-sm"><i class="fas fa-mobile-alt mr-2"></i>Mobile</span>
+            </div>
+            
             <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Saya membangun pengalaman web yang luar biasa dengan kode yang bersih, efisien, dan penuh kreativitas.
+                Membangun solusi end-to-end dari database, server, hingga UI yang responsif. 
+                Saya menghadirkan aplikasi yang scalable, aman, dan performant.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -173,11 +186,14 @@
                 <a href="#" class="text-2xl hover:text-primary transition-colors duration-300">
                     <i class="fab fa-instagram"></i>
                 </a>
+                <a href="#" class="text-2xl hover:text-primary transition-colors duration-300">
+                    <i class="fab fa-gitlab"></i>
+                </a>
             </div>
         </div>
     </section>
     
-    <!-- About Section -->
+    <!-- About Section - Enhanced untuk Full Stack -->
     <section id="about" class="py-24 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 animate-slide-up">
@@ -187,67 +203,171 @@
             
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6 animate-slide-up">
-                    <h3 class="text-2xl font-semibold">Siapa Saya?</h3>
+                    <h3 class="text-2xl font-semibold">Full-Stack Developer</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Saya adalah seorang <span class="text-primary font-semibold">Front-End Developer</span> dengan passion menciptakan antarmuka yang indah, responsif, dan user-friendly. 
-                        Berpengalaman dalam mengembangkan aplikasi web modern menggunakan teknologi terkini.
+                        Saya adalah <span class="text-primary font-semibold">Full-Stack Developer</span> dengan pengalaman membangun aplikasi dari nol hingga production. 
+                        Menguasai baik sisi <strong class="text-emerald-400">frontend</strong> (React, Next.js, Vue) maupun <strong class="text-emerald-400">backend</strong> (Node.js, Python, Go, PHP).
                     </p>
                     <p class="text-gray-300 leading-relaxed">
-                        Saya percaya bahwa desain yang baik tidak hanya tentang estetika, tetapi juga tentang pengalaman pengguna yang seamless. 
-                        Setiap baris kode yang saya tulis selalu mempertimbangkan performa, aksesibilitas, dan maintainability.
+                        Saya juga berpengalaman dalam <strong>database design</strong> (PostgreSQL, MySQL, MongoDB), 
+                        <strong>API development</strong> (REST, GraphQL), <strong>cloud deployment</strong> (AWS, GCP, Docker), 
+                        dan <strong>system architecture</strong> untuk aplikasi skala besar.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Setiap proyek yang saya kerjakan selalu mempertimbangkan <strong class="text-primary">scalability, security, dan maintainability</strong> 
+                        dari sisi server hingga pengalaman pengguna.
                     </p>
                     
-                    <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="grid grid-cols-3 gap-4 pt-4">
                         <div class="glass-card rounded-lg p-4 text-center">
-                            <div class="text-3xl text-primary font-bold">3+</div>
-                            <div class="text-sm text-gray-400">Tahun Pengalaman</div>
+                            <div class="text-3xl text-primary font-bold">4+</div>
+                            <div class="text-sm text-gray-400">Tahun Exp</div>
                         </div>
                         <div class="glass-card rounded-lg p-4 text-center">
-                            <div class="text-3xl text-primary font-bold">20+</div>
-                            <div class="text-sm text-gray-400">Proyek Selesai</div>
+                            <div class="text-3xl text-primary font-bold">30+</div>
+                            <div class="text-sm text-gray-400">Proyek</div>
+                        </div>
+                        <div class="glass-card rounded-lg p-4 text-center">
+                            <div class="text-3xl text-primary font-bold">15+</div>
+                            <div class="text-sm text-gray-400">Klien</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="glass-card rounded-2xl p-8 animate-slide-up">
-                    <h3 class="text-2xl font-semibold mb-6">Tech Stack</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 glass rounded-full text-sm">React.js</span>
-                        <span class="px-4 py-2 glass rounded-full text-sm">Next.js</span>
-                        <span class="px-4 py-2 glass rounded-full text-sm">TypeScript</span>
-                        <span class="px-4 py-2 glass rounded-full text-sm">Tailwind CSS</span>
-                        <span class="px-4 py-2 glass rounded-full text-sm">Vue.js</span>
-                        <span class="px-4 py-2 glass rounded-full text-sm">Node.js</span>
-                        <span class="px-4 py-2 glass rounded-full text-sm">Git & GitHub</span>
-                        <span class="px-4 py-2 glass rounded-full text-sm">Figma</span>
+                <div class="space-y-6 animate-slide-up">
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-server text-primary mr-2"></i> Backend & Database</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 glass rounded-full text-xs">Node.js</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Express.js</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">NestJS</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Python (Django/Flask)</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Go</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">PHP (Laravel)</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">PostgreSQL</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">MySQL</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">MongoDB</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Redis</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Prisma ORM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-code text-primary mr-2"></i> Frontend & Mobile</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 glass rounded-full text-xs">React.js</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Next.js</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Vue.js/Nuxt</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">TypeScript</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Tailwind CSS</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">React Native</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Flutter</span>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-4"><i class="fas fa-cloud text-primary mr-2"></i> DevOps & Tools</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 glass rounded-full text-xs">Docker</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Kubernetes</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">AWS (EC2, RDS, S3)</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">GCP</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">CI/CD (GitHub Actions)</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Nginx</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Linux</span>
+                            <span class="px-3 py-1 glass rounded-full text-xs">Git/GitHub</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 px-6 bg-black/20">
+    <!-- Skills Section - NEW: arsitektur & sistem design -->
+    <section id="skills" class="py-24 px-6 bg-black/20">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Proyek <span class="text-primary">Terbaru</span></h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Kompetensi <span class="text-primary">Utama</span></h2>
                 <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Beberapa proyek yang telah saya kerjakan</p>
+                <p class="text-gray-400 mt-4">End-to-end development capabilities</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Database & API Design</h3>
+                    <p class="text-gray-400 text-sm">Merancang skema database yang efisien, normalized, dan optimal. Membangun RESTful API & GraphQL dengan dokumentasi lengkap.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Security & Auth</h3>
+                    <p class="text-gray-400 text-sm">Implementasi JWT, OAuth2, Role-Based Access Control, enkripsi data, dan proteksi terhadap serangan umum (SQL injection, XSS, CSRF).</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Performance & Scaling</h3>
+                    <p class="text-gray-400 text-sm">Optimasi query database, caching (Redis), load balancing, horizontal scaling, dan CDN implementation.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">WebSocket & Real-time</h3>
+                    <p class="text-gray-400 text-sm">Membangun fitur real-time seperti chat, notifikasi, dan live updates menggunakan Socket.io atau WebSocket.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Testing & Quality</h3>
+                    <p class="text-gray-400 text-sm">Unit testing, integration testing, E2E testing (Jest, Mocha, Cypress). Code coverage dan debugging.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">System Architecture</h3>
+                    <p class="text-gray-400 text-sm">Microservices, Monolithic, Event-driven architecture. Message broker (RabbitMQ, Kafka).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section - Enhanced dengan backend projects -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Proyek <span class="text-primary">Full-Stack</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Proyek end-to-end yang mencakup frontend, backend, database, dan deployment</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
+                <!-- Project 1 - Full Stack E-Commerce -->
                 <div class="glass-card rounded-xl overflow-hidden group cursor-pointer">
                     <div class="h-48 bg-gradient-to-br from-primary/30 to-purple-600/30 flex items-center justify-center">
                         <i class="fas fa-shopping-cart text-6xl text-primary/50"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">E-Commerce App</h3>
-                        <p class="text-gray-400 text-sm mb-4">Aplikasi e-commerce modern dengan fitur keranjang belanja dan pembayaran.</p>
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-400 text-sm mb-4">Platform e-commerce full-stack dengan payment gateway, admin dashboard, dan real-time stock management.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 glass rounded">React</span>
-                            <span class="text-xs px-2 py-1 glass rounded">Redux</span>
-                            <span class="text-xs px-2 py-1 glass rounded">Tailwind</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Next.js</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Node.js</span>
+                            <span class="text-xs px-2 py-1 glass rounded">PostgreSQL</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Redis</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Docker</span>
                         </div>
                         <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
                             Lihat Detail <i class="fas fa-arrow-right text-xs"></i>
@@ -255,18 +375,19 @@
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
+                <!-- Project 2 - Real-time Dashboard -->
                 <div class="glass-card rounded-xl overflow-hidden group cursor-pointer">
                     <div class="h-48 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
                         <i class="fas fa-chart-line text-6xl text-primary/50"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Dashboard Analytics</h3>
-                        <p class="text-gray-400 text-sm mb-4">Dashboard interaktif untuk visualisasi data dan analitik real-time.</p>
+                        <h3 class="text-xl font-semibold mb-2">Real-time Analytics Dashboard</h3>
+                        <p class="text-gray-400 text-sm mb-4">Dashboard analitik real-time dengan WebSocket, data streaming, dan visualisasi interaktif.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 glass rounded">Next.js</span>
-                            <span class="text-xs px-2 py-1 glass rounded">Chart.js</span>
-                            <span class="text-xs px-2 py-1 glass rounded">TypeScript</span>
+                            <span class="text-xs px-2 py-1 glass rounded">React</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Python/FastAPI</span>
+                            <span class="text-xs px-2 py-1 glass rounded">WebSocket</span>
+                            <span class="text-xs px-2 py-1 glass rounded">MongoDB</span>
                         </div>
                         <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
                             Lihat Detail <i class="fas fa-arrow-right text-xs"></i>
@@ -274,18 +395,19 @@
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
+                <!-- Project 3 - Task Management with Microservices -->
                 <div class="glass-card rounded-xl overflow-hidden group cursor-pointer">
                     <div class="h-48 bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
                         <i class="fas fa-tasks text-6xl text-primary/50"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Task Management</h3>
-                        <p class="text-gray-400 text-sm mb-4">Aplikasi manajemen tugas dengan drag-and-drop dan kolaborasi tim.</p>
+                        <h3 class="text-xl font-semibold mb-2">Microservices Task Manager</h3>
+                        <p class="text-gray-400 text-sm mb-4">Sistem manajemen tugas dengan arsitektur microservices, message broker, dan API gateway.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="text-xs px-2 py-1 glass rounded">Vue.js</span>
-                            <span class="text-xs px-2 py-1 glass rounded">Vuex</span>
-                            <span class="text-xs px-2 py-1 glass rounded">SCSS</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Go</span>
+                            <span class="text-xs px-2 py-1 glass rounded">RabbitMQ</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Kubernetes</span>
                         </div>
                         <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
                             Lihat Detail <i class="fas fa-arrow-right text-xs"></i>
@@ -297,12 +419,12 @@
     </section>
     
     <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6">
+    <section id="contact" class="py-24 px-6 bg-black/20">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">Hubungi <span class="text-primary">Saya</span></h2>
                 <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4">Tertarik untuk berkolaborasi? Mari kita bicara!</p>
+                <p class="text-gray-400 mt-4">Tertarik berkolaborasi? Butuh full-stack developer untuk proyek Anda? Mari diskusi!</p>
             </div>
             
             <div class="glass-card rounded-2xl p-8 md:p-12">
@@ -323,7 +445,7 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">Pesan</label>
-                        <textarea rows="5" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors"></textarea>
+                        <textarea rows="5" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors" placeholder="Ceritakan tentang proyek Anda..."></textarea>
                     </div>
                     <button type="submit" class="w-full py-3 bg-primary rounded-lg font-semibold hover:bg-indigo-500 transition-all duration-300 transform hover:scale-105">
                         Kirim Pesan
@@ -337,13 +459,12 @@
     <!-- Footer -->
     <footer class="py-8 px-6 border-t border-white/10">
         <div class="max-w-6xl mx-auto text-center text-gray-400 text-sm">
-            <p>&copy; 2026 Portfolio. Dibuat dengan <i class="fas fa-heart text-red-500"></i> oleh Developer Kreatif</p>
+            <p>&copy; 2026 Jaffray.dev | Full-Stack Developer | Available for freelance & full-time opportunities</p>
         </div>
     </footer>
     
     <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -351,7 +472,6 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Smooth scroll untuk navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -366,7 +486,6 @@
             });
         });
         
-        // Navbar background change on scroll
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -377,7 +496,6 @@
             }
         });
         
-        // Form submission handler
         const contactForm = document.getElementById('contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
@@ -387,7 +505,6 @@
             });
         }
         
-        // Animasi on scroll (simple)
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
