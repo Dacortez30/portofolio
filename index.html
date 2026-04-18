@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Portfolio Junior Web Developer - PHP, Laravel, Python">
-    <meta name="author" content="Jaffray - Junior Web Developer">
-    <title>Jaffray | Junior Web Developer</title>
+    <meta name="description" content="Web Developer - Spesialis Laravel & Python">
+    <meta name="author" content="Jaffray - Web Developer">
+    <title>Jaffray | Web Developer</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +17,7 @@
                 extend: {
                     colors: {
                         primary: '#6366f1',
-                        secondary: '#f59e0b',
+                        secondary: '#10b981',
                         dark: '#0f172a',
                     },
                     fontFamily: {
@@ -93,11 +93,7 @@
         .glass-card:hover {
             border-color: rgba(99, 102, 241, 0.5);
             transform: translateY(-5px);
-        }
-        
-        .learning-badge {
-            background: rgba(245, 158, 11, 0.2);
-            border: 1px solid rgba(245, 158, 11, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -113,8 +109,8 @@
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="hover:text-primary transition-colors duration-300">Beranda</a>
                 <a href="#about" class="hover:text-primary transition-colors duration-300">Tentang</a>
-                <a href="#skills" class="hover:text-primary transition-colors duration-300">Skill</a>
-                <a href="#projects" class="hover:text-primary transition-colors duration-300">Proyek</a>
+                <a href="#skills" class="hover:text-primary transition-colors duration-300">Keahlian</a>
+                <a href="#projects" class="hover:text-primary transition-colors duration-300">Portofolio</a>
                 <a href="#contact" class="hover:text-primary transition-colors duration-300">Kontak</a>
             </div>
             
@@ -126,8 +122,8 @@
         <div class="md:hidden hidden mt-4 space-y-3 text-center" id="mobile-menu">
             <a href="#home" class="block py-2 hover:text-primary transition-colors">Beranda</a>
             <a href="#about" class="block py-2 hover:text-primary transition-colors">Tentang</a>
-            <a href="#skills" class="block py-2 hover:text-primary transition-colors">Skill</a>
-            <a href="#projects" class="block py-2 hover:text-primary transition-colors">Proyek</a>
+            <a href="#skills" class="block py-2 hover:text-primary transition-colors">Keahlian</a>
+            <a href="#projects" class="block py-2 hover:text-primary transition-colors">Portofolio</a>
             <a href="#contact" class="block py-2 hover:text-primary transition-colors">Kontak</a>
         </div>
     </nav>
@@ -137,27 +133,34 @@
         <div class="max-w-6xl mx-auto text-center animate-fade-in">
             <div class="mb-8">
                 <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-6xl font-bold mb-6 shadow-2xl">
-                    <i class="fas fa-laptop-code text-white"></i>
+                    <i class="fas fa-code text-white"></i>
                 </div>
             </div>
             
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                Halo, Saya <span class="text-primary">Jaffray</span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                Jaffray
             </h1>
             
-            <div class="inline-block px-4 py-2 learning-badge rounded-full text-secondary mb-6">
-                <i class="fas fa-graduation-cap mr-2"></i> Junior Web Developer
+            <div class="inline-flex gap-3 justify-center mb-6 flex-wrap">
+                <span class="px-4 py-2 glass rounded-full text-primary border border-primary/50">
+                    <i class="fab fa-laravel mr-2"></i>Laravel
+                </span>
+                <span class="px-4 py-2 glass rounded-full text-secondary border border-secondary/50">
+                    <i class="fab fa-python mr-2"></i>Python
+                </span>
+                <span class="px-4 py-2 glass rounded-full text-white border border-white/20">
+                    <i class="fab fa-php mr-2"></i>PHP
+                </span>
             </div>
             
             <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Saya sedang mempelajari dan membangun website dengan 
-                <span class="text-primary font-semibold">PHP, Laravel, Blade,</span> dan 
-                <span class="text-primary font-semibold">Python</span>.
+                Web Developer yang fokus pada <span class="text-primary font-semibold">Laravel</span> dan <span class="text-secondary font-semibold">Python</span>. 
+                Membangun aplikasi web yang fungsional, efisien, dan scalable.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <a href="#projects" class="px-8 py-3 bg-primary rounded-full font-semibold hover:bg-indigo-500 transition-all duration-300 transform hover:scale-105">
-                    Lihat Proyek
+                    Lihat Portofolio
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
                 <a href="#contact" class="px-8 py-3 glass rounded-full font-semibold border border-primary/50 hover:bg-primary/20 transition-all duration-300">
@@ -189,78 +192,87 @@
             
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6 animate-slide-up">
-                    <h3 class="text-2xl font-semibold">Perjalanan Belajar Saya</h3>
+                    <h3 class="text-2xl font-semibold">Web Developer</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Saya adalah seorang <span class="text-primary font-semibold">junior web developer</span> yang sedang aktif belajar dan mengembangkan skill di bidang web development. 
-                        Saat ini saya fokus mempelajari <strong>PHP Laravel</strong> untuk backend dan <strong>Python</strong> untuk pengolahan data & automation.
+                        Saya adalah <span class="text-primary font-semibold">Web Developer</span> yang berfokus pada pengembangan aplikasi menggunakan 
+                        <strong>Laravel</strong> untuk backend dan <strong>Python</strong> untuk berbagai keperluan seperti automation, data processing, dan API development.
                     </p>
                     <p class="text-gray-300 leading-relaxed">
-                        Saya percaya bahwa proses belajar tidak pernah berakhir. Setiap hari saya meluangkan waktu untuk belajar hal baru, 
-                        mengerjakan proyek kecil, dan membangun portofolio. Saya siap untuk terus berkembang dan berkontribusi di dunia programming.
+                        Saya memiliki pemahaman yang solid tentang konsep MVC, RESTful API, database design, dan version control dengan Git. 
+                        Setiap kode yang saya tulis mengutamakan clean code, security, dan maintainability.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Saya selalu mengikuti perkembangan teknologi terbaru di ekosistem Laravel dan Python untuk memastikan solusi yang saya bangun tetap modern dan relevan.
                     </p>
                     
-                    <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="grid grid-cols-3 gap-4 pt-4">
                         <div class="glass-card rounded-lg p-4 text-center">
-                            <div class="text-3xl text-primary font-bold">6+</div>
-                            <div class="text-sm text-gray-400">Bulan Belajar</div>
+                            <div class="text-3xl text-primary font-bold">10+</div>
+                            <div class="text-sm text-gray-400">Proyek Selesai</div>
                         </div>
                         <div class="glass-card rounded-lg p-4 text-center">
-                            <div class="text-3xl text-primary font-bold">5+</div>
-                            <div class="text-sm text-gray-400">Proyek Mini</div>
+                            <div class="text-3xl text-primary font-bold">100%</div>
+                            <div class="text-sm text-gray-400">Fokus Kualitas</div>
+                        </div>
+                        <div class="glass-card rounded-lg p-4 text-center">
+                            <div class="text-3xl text-primary font-bold">24/7</div>
+                            <div class="text-sm text-gray-400">Support</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="glass-card rounded-2xl p-8 animate-slide-up">
-                    <h3 class="text-2xl font-semibold mb-6">Yang Saya Pelajari</h3>
+                    <h3 class="text-2xl font-semibold mb-6">Tech Stack</h3>
                     
-                    <div class="mb-6">
-                        <div class="flex justify-between mb-2">
-                            <span><i class="fab fa-html5 text-orange-500 mr-2"></i> HTML & CSS</span>
-                            <span class="text-primary">80%</span>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fab fa-laravel text-red-400 mr-2"></i> Laravel / PHP</span>
+                                <span class="text-primary">Advanced</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
                         </div>
-                        <div class="w-full bg-white/10 rounded-full h-2">
-                            <div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fab fa-python text-blue-400 mr-2"></i> Python</span>
+                                <span class="text-primary">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <div class="flex justify-between mb-2">
-                            <span><i class="fab fa-php text-indigo-400 mr-2"></i> PHP</span>
-                            <span class="text-primary">65%</span>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fas fa-database text-yellow-400 mr-2"></i> MySQL / PostgreSQL</span>
+                                <span class="text-primary">Advanced</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
+                            </div>
                         </div>
-                        <div class="w-full bg-white/10 rounded-full h-2">
-                            <div class="bg-primary h-2 rounded-full" style="width: 65%"></div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fab fa-html5 text-orange-500 mr-2"></i> HTML, CSS, Blade</span>
+                                <span class="text-primary">Advanced</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <div class="flex justify-between mb-2">
-                            <span><i class="fab fa-laravel text-red-400 mr-2"></i> Laravel</span>
-                            <span class="text-primary">50%</span>
-                        </div>
-                        <div class="w-full bg-white/10 rounded-full h-2">
-                            <div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <div class="flex justify-between mb-2">
-                            <span><i class="fab fa-python text-blue-400 mr-2"></i> Python</span>
-                            <span class="text-primary">45%</span>
-                        </div>
-                        <div class="w-full bg-white/10 rounded-full h-2">
-                            <div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span><i class="fas fa-database text-yellow-400 mr-2"></i> MySQL</span>
-                            <span class="text-primary">55%</span>
-                        </div>
-                        <div class="w-full bg-white/10 rounded-full h-2">
-                            <div class="bg-primary h-2 rounded-full" style="width: 55%"></div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fab fa-git-alt text-orange-500 mr-2"></i> Git & Version Control</span>
+                                <span class="text-primary">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -268,61 +280,62 @@
         </div>
     </section>
     
-    <!-- Skills Section -->
+    <!-- Skills Section - Detail Keahlian -->
     <section id="skills" class="py-24 px-6 bg-black/20">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Tech <span class="text-primary">Stack</span></h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Bidang <span class="text-primary">Keahlian</span></h2>
                 <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4">Teknologi yang sedang saya pelajari dan kuasai</p>
+                <p class="text-gray-400 mt-4">Apa yang bisa saya kerjakan untuk Anda</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Core Skills -->
-                <div class="glass-card rounded-xl p-6">
-                    <div class="text-3xl text-primary mb-4">
-                        <i class="fab fa-php"></i>
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fab fa-laravel"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Web Development</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 glass rounded-full text-sm">HTML5</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">CSS3</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">PHP</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">Laravel</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">Blade</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">MySQL</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">JavaScript (Dasar)</span>
-                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Laravel Development</h3>
+                    <p class="text-gray-400 text-sm">Membangun aplikasi web dengan Laravel mulai dari CRUD, authentication, RESTful API, hingga sistem yang kompleks dengan Eloquent ORM.</p>
                 </div>
                 
-                <!-- Python -->
-                <div class="glass-card rounded-xl p-6">
-                    <div class="text-3xl text-primary mb-4">
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
                         <i class="fab fa-python"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Python</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 glass rounded-full text-sm">Python Dasar</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">Flask (Mulai)</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">Data Processing</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">Automation</span>
-                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Python Development</h3>
+                    <p class="text-gray-400 text-sm">Membuat script automation, web scraping, data processing, REST API dengan Flask/Django, dan berbagai utility Python lainnya.</p>
                 </div>
                 
-                <!-- Tools -->
-                <div class="glass-card rounded-xl p-6">
-                    <div class="text-3xl text-primary mb-4">
-                        <i class="fas fa-tools"></i>
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-database"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Tools & Lainnya</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 glass rounded-full text-sm">Git & GitHub</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">VS Code</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">XAMPP</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">Postman</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">Composer</span>
-                        <span class="px-3 py-1 glass rounded-full text-sm">Artisan</span>
+                    <h3 class="text-xl font-semibold mb-3">Database Design</h3>
+                    <p class="text-gray-400 text-sm">Merancang skema database yang efisien, normalisasi, optimasi query, dan migrasi database menggunakan Laravel migration.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-code-branch"></i>
                     </div>
+                    <h3 class="text-xl font-semibold mb-3">API Development</h3>
+                    <p class="text-gray-400 text-sm">Membangun RESTful API dengan Laravel atau Python, dokumentasi API, dan integrasi dengan berbagai platform.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Web Security</h3>
+                    <p class="text-gray-400 text-sm">Implementasi best practice keamanan web: CSRF protection, XSS prevention, SQL injection prevention, dan authentication yang aman.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Performance</h3>
+                    <p class="text-gray-400 text-sm">Optimasi performa aplikasi, caching, lazy loading, dan database indexing untuk kecepatan loading yang optimal.</p>
                 </div>
             </div>
         </div>
@@ -332,50 +345,47 @@
     <section id="projects" class="py-24 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Proyek <span class="text-primary">Saya</span></h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Portofolio <span class="text-primary">Proyek</span></h2>
                 <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Proyek yang saya buat untuk belajar dan mengasah skill</p>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Beberapa proyek yang telah saya kerjakan</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 - Laravel -->
+                <!-- Project 1 -->
                 <div class="glass-card rounded-xl overflow-hidden group">
                     <div class="h-48 bg-gradient-to-br from-primary/30 to-purple-600/30 flex items-center justify-center">
                         <i class="fab fa-laravel text-6xl text-primary/50"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Blog Sederhana dengan Laravel</h3>
-                        <p class="text-gray-400 text-sm mb-4">Blog platform dengan fitur CRUD, authentication, dan comment system menggunakan Laravel 11 & Blade.</p>
+                        <h3 class="text-xl font-semibold mb-2">Sistem Manajemen Proyek</h3>
+                        <p class="text-gray-400 text-sm mb-4">Aplikasi manajemen proyek dengan fitur task assignment, progress tracking, dan report generation. Dibangun dengan Laravel 11 & MySQL.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="text-xs px-2 py-1 glass rounded">Laravel</span>
                             <span class="text-xs px-2 py-1 glass rounded">Blade</span>
                             <span class="text-xs px-2 py-1 glass rounded">MySQL</span>
-                            <span class="text-xs px-2 py-1 glass rounded">Bootstrap</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Tailwind</span>
                         </div>
                         <div class="flex gap-3">
                             <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
                                 <i class="fab fa-github"></i> Source Code
                             </a>
-                            <a href="#" class="text-gray-400 hover:text-white text-sm inline-flex items-center gap-1">
-                                <i class="fas fa-external-link-alt"></i> Demo
-                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 - Python -->
+                <!-- Project 2 -->
                 <div class="glass-card rounded-xl overflow-hidden group">
                     <div class="h-48 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
                         <i class="fab fa-python text-6xl text-primary/50"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Data Scraper & Analysis</h3>
-                        <p class="text-gray-400 text-sm mb-4">Program Python untuk scraping data website dan visualisasi data sederhana dengan matplotlib.</p>
+                        <h3 class="text-xl font-semibold mb-2">Web Scraper & Automation</h3>
+                        <p class="text-gray-400 text-sm mb-4">Tool scraping data otomatis dari berbagai website dengan fitur export ke Excel/CSV. Menggunakan Python, BeautifulSoup, dan Pandas.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="text-xs px-2 py-1 glass rounded">Python</span>
                             <span class="text-xs px-2 py-1 glass rounded">BeautifulSoup</span>
                             <span class="text-xs px-2 py-1 glass rounded">Pandas</span>
-                            <span class="text-xs px-2 py-1 glass rounded">Matplotlib</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Selenium</span>
                         </div>
                         <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
                             <i class="fab fa-github"></i> Source Code
@@ -383,32 +393,24 @@
                     </div>
                 </div>
                 
-                <!-- Project 3 - PHP Native -->
+                <!-- Project 3 -->
                 <div class="glass-card rounded-xl overflow-hidden group">
                     <div class="h-48 bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
-                        <i class="fab fa-php text-6xl text-primary/50"></i>
+                        <i class="fas fa-store text-6xl text-primary/50"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Sistem Inventory Sederhana</h3>
-                        <p class="text-gray-400 text-sm mb-4">Aplikasi inventory management dengan PHP Native, MySQL, dan template HTML/CSS custom.</p>
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce API</h3>
+                        <p class="text-gray-400 text-sm mb-4">RESTful API untuk aplikasi e-commerce dengan fitur authentication, product management, shopping cart, dan order processing.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 glass rounded">PHP Native</span>
-                            <span class="text-xs px-2 py-1 glass rounded">MySQL</span>
-                            <span class="text-xs px-2 py-1 glass rounded">HTML/CSS</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Laravel</span>
+                            <span class="text-xs px-2 py-1 glass rounded">API Resource</span>
+                            <span class="text-xs px-2 py-1 glass rounded">JWT Auth</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Postman</span>
                         </div>
                         <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
                             <i class="fab fa-github"></i> Source Code
                         </a>
                     </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <div class="inline-block glass-card rounded-lg p-4">
-                    <p class="text-gray-300">
-                        <i class="fas fa-spinner fa-pulse text-primary mr-2"></i>
-                        Masih terus belajar dan menambah proyek baru...
-                    </p>
                 </div>
             </div>
         </div>
@@ -420,7 +422,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">Hubungi <span class="text-primary">Saya</span></h2>
                 <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                <p class="text-gray-400 mt-4">Saya terbuka untuk belajar, berkolaborasi, atau sekedar berdiskusi tentang programming!</p>
+                <p class="text-gray-400 mt-4">Tertarik untuk berkolaborasi? Mari diskusikan proyek Anda</p>
             </div>
             
             <div class="glass-card rounded-2xl p-8 md:p-12">
@@ -441,22 +443,13 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">Pesan</label>
-                        <textarea rows="5" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors" placeholder="Ada yang ingin didiskusikan? Atau mungkin ada proyek kecil yang bisa kita kerjakan bersama?"></textarea>
+                        <textarea rows="5" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors" placeholder="Ceritakan tentang proyek atau kebutuhan Anda..."></textarea>
                     </div>
                     <button type="submit" class="w-full py-3 bg-primary rounded-lg font-semibold hover:bg-indigo-500 transition-all duration-300 transform hover:scale-105">
                         Kirim Pesan
                         <i class="fas fa-paper-plane ml-2"></i>
                     </button>
                 </form>
-                
-                <div class="mt-8 pt-6 border-t border-white/10 text-center text-gray-400 text-sm">
-                    <p>Atau bisa juga hubungi saya melalui:</p>
-                    <div class="flex justify-center gap-4 mt-3">
-                        <a href="#" class="hover:text-primary transition"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" class="hover:text-primary transition"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="#" class="hover:text-primary transition"><i class="fab fa-twitter"></i> Twitter</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -464,8 +457,8 @@
     <!-- Footer -->
     <footer class="py-8 px-6 border-t border-white/10">
         <div class="max-w-6xl mx-auto text-center text-gray-400 text-sm">
-            <p>&copy; 2026 Jaffray | Junior Web Developer | Masih dalam proses belajar 🚀</p>
-            <p class="text-xs mt-2 text-gray-500">Dibuat dengan HTML, Tailwind CSS, dan semangat belajar</p>
+            <p>&copy; 2026 Jaffray | Web Developer (Laravel & Python)</p>
+            <p class="text-xs mt-2 text-gray-500">Available for freelance & collaboration</p>
         </div>
     </footer>
     
@@ -505,7 +498,7 @@
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                alert('Terima kasih! Pesan Anda telah terkirim. Saya akan membaca dan merespon segera.');
+                alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda.');
                 contactForm.reset();
             });
         }
