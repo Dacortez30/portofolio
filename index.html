@@ -1,614 +1,620 @@
-    <!DOCTYPE html>
-    <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-        <meta name="description" content="Web Developer - Spesialis Laravel & Python">
-        <meta name="author" content="Jaffray - Web Developer">
-        <title>Jaffray | Web Developer</title>
-        
-        <!-- Tailwind CSS CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        
-        <!-- Custom konfigurasi Tailwind -->
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: '#6366f1',
-                            secondary: '#10b981',
-                            dark: '#0f172a',
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Web Developer - Spesialis Laravel & Python">
+    <meta name="author" content="Jaffray - Web Developer">
+    <title>Jaffray | Web Developer</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom konfigurasi Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#10b981',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
                         },
-                        fontFamily: {
-                            'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
                         },
-                        animation: {
-                            'fade-in': 'fadeIn 0.8s ease-out',
-                            'slide-up': 'slideUp 0.6s ease-out',
-                        },
-                        keyframes: {
-                            fadeIn: {
-                                '0%': { opacity: '0' },
-                                '100%': { opacity: '1' },
-                            },
-                            slideUp: {
-                                '0%': { transform: 'translateY(30px)', opacity: '0' },
-                                '100%': { transform: 'translateY(0)', opacity: '1' },
-                            },
-                        },
-                    }
+                    },
                 }
             }
-        </script>
+        }
+    </script>
+    
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
-        <!-- Google Fonts Inter -->
-        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+        html {
+            scroll-behavior: smooth;
+        }
         
-        <!-- Font Awesome Icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
         
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            
-            html {
-                scroll-behavior: smooth;
-            }
-            
-            body {
-                font-family: 'Inter', sans-serif;
-                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            }
-            
-            ::-webkit-scrollbar {
-                width: 10px;
-            }
-            
-            ::-webkit-scrollbar-track {
-                background: #1e293b;
-            }
-            
-            ::-webkit-scrollbar-thumb {
-                background: #6366f1;
-                border-radius: 5px;
-            }
-            
-            .glass {
-                background: rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
-            .glass-card {
-                background: rgba(30, 41, 59, 0.5);
-                backdrop-filter: blur(12px);
-                border: 1px solid rgba(99, 102, 241, 0.2);
-                transition: all 0.3s ease;
-            }
-            
-            .glass-card:hover {
-                border-color: rgba(99, 102, 241, 0.5);
-                transform: translateY(-5px);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            }
-        </style>
-    </head>
-    <body class="text-white">
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
         
-        <!-- Navbar -->
-        <nav class="fixed top-0 left-0 w-full z-50 glass py-4 px-6 md:px-12 transition-all duration-300" id="navbar">
-            <div class="max-w-7xl mx-auto flex justify-between items-center">
-                <div class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    Jaffray<span class="text-white">.dev</span>
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-primary transition-colors duration-300">Beranda</a>
-                    <a href="#about" class="hover:text-primary transition-colors duration-300">Tentang</a>
-                    <a href="#skills" class="hover:text-primary transition-colors duration-300">Keahlian</a>
-                    <a href="#projects" class="hover:text-primary transition-colors duration-300">Portofolio</a>
-                    <a href="#certificates" class="hover:text-primary transition-colors duration-300">Sertifikat</a>
-                    <a href="#contact" class="hover:text-primary transition-colors duration-300">Kontak</a>
-                </div>
-                
-                <button class="md:hidden text-2xl" id="menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 5px;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="text-white">
+    
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass py-4 px-6 md:px-12 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Jaffray<span class="text-white">.dev</span>
             </div>
             
-            <div class="md:hidden hidden mt-4 space-y-3 text-center" id="mobile-menu">
-                <a href="#home" class="block py-2 hover:text-primary transition-colors">Beranda</a>
-                <a href="#about" class="block py-2 hover:text-primary transition-colors">Tentang</a>
-                <a href="#skills" class="block py-2 hover:text-primary transition-colors">Keahlian</a>
-                <a href="#projects" class="block py-2 hover:text-primary transition-colors">Portofolio</a>
-                <a href="#certificates" class="block py-2 hover:text-primary transition-colors">Sertifikat</a>
-                <a href="#contact" class="block py-2 hover:text-primary transition-colors">Kontak</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-primary transition-colors duration-300">Beranda</a>
+                <a href="#about" class="hover:text-primary transition-colors duration-300">Tentang</a>
+                <a href="#skills" class="hover:text-primary transition-colors duration-300">Keahlian</a>
+                <a href="#projects" class="hover:text-primary transition-colors duration-300">Portofolio</a>
+                <a href="#certificates" class="hover:text-primary transition-colors duration-300">Sertifikat</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300">Kontak</a>
             </div>
-        </nav>
+            
+            <button class="md:hidden text-2xl" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
         
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
-            <div class="max-w-6xl mx-auto text-center animate-fade-in">
-                <div class="mb-8">
-                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-6xl font-bold mb-6 shadow-2xl">
-                        <i class="fas fa-code text-white"></i>
-                    </div>
-                </div>
-                
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">
-                    Jaffray
-                </h1>
-                
-                <div class="inline-flex gap-3 justify-center mb-6 flex-wrap">
-                    <span class="px-4 py-2 glass rounded-full text-primary border border-primary/50">
-                        <i class="fab fa-laravel mr-2"></i>Laravel
-                    </span>
-                    <span class="px-4 py-2 glass rounded-full text-secondary border border-secondary/50">
-                        <i class="fab fa-python mr-2"></i>Python
-                    </span>
-                    <span class="px-4 py-2 glass rounded-full text-white border border-white/20">
-                        <i class="fab fa-php mr-2"></i>PHP
-                    </span>
-                </div>
-                
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                    Web Developer yang fokus pada <span class="text-primary font-semibold">Laravel</span> dan <span class="text-secondary font-semibold">Python</span>. 
-                    Membangun aplikasi web yang fungsional, efisien, dan scalable.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                    <a href="#projects" class="px-8 py-3 bg-primary rounded-full font-semibold hover:bg-indigo-500 transition-all duration-300 transform hover:scale-105">
-                        Lihat Portofolio
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#contact" class="px-8 py-3 glass rounded-full font-semibold border border-primary/50 hover:bg-primary/20 transition-all duration-300">
-                        Hubungi Saya
-                    </a>
-                </div>
-                
-                <div class="flex justify-center space-x-6">
-                    <a href="#" class="text-2xl hover:text-primary transition-colors duration-300">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="text-2xl hover:text-primary transition-colors duration-300">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="text-2xl hover:text-primary transition-colors duration-300">
-                        <i class="fab fa-twitter"></i>
-                    </a>
+        <div class="md:hidden hidden mt-4 space-y-3 text-center" id="mobile-menu">
+            <a href="#home" class="block py-2 hover:text-primary transition-colors">Beranda</a>
+            <a href="#about" class="block py-2 hover:text-primary transition-colors">Tentang</a>
+            <a href="#skills" class="block py-2 hover:text-primary transition-colors">Keahlian</a>
+            <a href="#projects" class="block py-2 hover:text-primary transition-colors">Portofolio</a>
+            <a href="#certificates" class="block py-2 hover:text-primary transition-colors">Sertifikat</a>
+            <a href="#contact" class="block py-2 hover:text-primary transition-colors">Kontak</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-6xl mx-auto text-center animate-fade-in">
+            <div class="mb-8">
+                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-6xl font-bold mb-6 shadow-2xl">
+                    <i class="fas fa-code text-white"></i>
                 </div>
             </div>
-        </section>
-        
-        <!-- About Section -->
-        <section id="about" class="py-24 px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 animate-slide-up">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Tentang <span class="text-primary">Saya</span></h2>
-                    <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6 animate-slide-up">
-                        <h3 class="text-2xl font-semibold">Web Developer</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            Saya adalah <span class="text-primary font-semibold">Web Developer</span> yang berfokus pada pengembangan aplikasi menggunakan 
-                            <strong>Laravel</strong> untuk backend dan <strong>Python</strong> untuk berbagai keperluan seperti automation, data processing, dan API development.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed">
-                            Saya memiliki pemahaman yang solid tentang konsep MVC, RESTful API, database design, dan version control dengan Git. 
-                            Setiap kode yang saya tulis mengutamakan clean code, security, dan maintainability.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed">
-                            Saya selalu mengikuti perkembangan teknologi terbaru di ekosistem Laravel dan Python untuk memastikan solusi yang saya bangun tetap modern dan relevan.
-                        </p>
-                        
-                        <div class="grid grid-cols-3 gap-4 pt-4">
-                            <div class="glass-card rounded-lg p-4 text-center">
-                                <div class="text-3xl text-primary font-bold">10+</div>
-                                <div class="text-sm text-gray-400">Proyek Selesai</div>
-                            </div>
-                            <div class="glass-card rounded-lg p-4 text-center">
-                                <div class="text-3xl text-primary font-bold">100%</div>
-                                <div class="text-sm text-gray-400">Fokus Kualitas</div>
-                            </div>
-                            <div class="glass-card rounded-lg p-4 text-center">
-                                <div class="text-3xl text-primary font-bold">24/7</div>
-                                <div class="text-sm text-gray-400">Support</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="glass-card rounded-2xl p-8 animate-slide-up">
-                        <h3 class="text-2xl font-semibold mb-6">Tech Stack</h3>
-                        
-                        <div class="space-y-5">
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span><i class="fab fa-laravel text-red-400 mr-2"></i> Laravel / PHP</span>
-                                    <span class="text-primary">Advanced</span>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-full h-2">
-                                    <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span><i class="fab fa-python text-blue-400 mr-2"></i> Python</span>
-                                    <span class="text-primary">Intermediate</span>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-full h-2">
-                                    <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span><i class="fas fa-database text-yellow-400 mr-2"></i> MySQL / PostgreSQL</span>
-                                    <span class="text-primary">Advanced</span>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-full h-2">
-                                    <div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span><i class="fab fa-html5 text-orange-500 mr-2"></i> HTML, CSS, Blade</span>
-                                    <span class="text-primary">Advanced</span>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-full h-2">
-                                    <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span><i class="fab fa-git-alt text-orange-500 mr-2"></i> Git & Version Control</span>
-                                    <span class="text-primary">Intermediate</span>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-full h-2">
-                                    <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                Jaffray
+            </h1>
+            
+            <div class="inline-flex gap-3 justify-center mb-6 flex-wrap">
+                <span class="px-4 py-2 glass rounded-full text-primary border border-primary/50">
+                    <i class="fab fa-laravel mr-2"></i>Laravel
+                </span>
+                <span class="px-4 py-2 glass rounded-full text-secondary border border-secondary/50">
+                    <i class="fab fa-python mr-2"></i>Python
+                </span>
+                <span class="px-4 py-2 glass rounded-full text-white border border-white/20">
+                    <i class="fab fa-php mr-2"></i>PHP
+                </span>
             </div>
-        </section>
-        
-        <!-- Skills Section -->
-        <section id="skills" class="py-24 px-6 bg-black/20">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Bidang <span class="text-primary">Keahlian</span></h2>
-                    <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                    <p class="text-gray-400 mt-4">Apa yang bisa saya kerjakan untuk Anda</p>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="glass-card rounded-xl p-6 text-center">
-                        <div class="text-4xl text-primary mb-4">
-                            <i class="fab fa-laravel"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Laravel Development</h3>
-                        <p class="text-gray-400 text-sm">Membangun aplikasi web dengan Laravel mulai dari CRUD, authentication, RESTful API, hingga sistem yang kompleks dengan Eloquent ORM.</p>
-                    </div>
-                    
-                    <div class="glass-card rounded-xl p-6 text-center">
-                        <div class="text-4xl text-primary mb-4">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Python Development</h3>
-                        <p class="text-gray-400 text-sm">Membuat script automation, web scraping, data processing, REST API dengan Flask/Django, dan berbagai utility Python lainnya.</p>
-                    </div>
-                    
-                    <div class="glass-card rounded-xl p-6 text-center">
-                        <div class="text-4xl text-primary mb-4">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Database Design</h3>
-                        <p class="text-gray-400 text-sm">Merancang skema database yang efisien, normalisasi, optimasi query, dan migrasi database menggunakan Laravel migration.</p>
-                    </div>
-                    
-                    <div class="glass-card rounded-xl p-6 text-center">
-                        <div class="text-4xl text-primary mb-4">
-                            <i class="fas fa-code-branch"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">API Development</h3>
-                        <p class="text-gray-400 text-sm">Membangun RESTful API dengan Laravel atau Python, dokumentasi API, dan integrasi dengan berbagai platform.</p>
-                    </div>
-                    
-                    <div class="glass-card rounded-xl p-6 text-center">
-                        <div class="text-4xl text-primary mb-4">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Web Security</h3>
-                        <p class="text-gray-400 text-sm">Implementasi best practice keamanan web: CSRF protection, XSS prevention, SQL injection prevention, dan authentication yang aman.</p>
-                    </div>
-                    
-                    <div class="glass-card rounded-xl p-6 text-center">
-                        <div class="text-4xl text-primary mb-4">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Performance</h3>
-                        <p class="text-gray-400 text-sm">Optimasi performa aplikasi, caching, lazy loading, dan database indexing untuk kecepatan loading yang optimal.</p>
-                    </div>
-                </div>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Web Developer yang fokus pada <span class="text-primary font-semibold">Laravel</span> dan <span class="text-secondary font-semibold">Python</span>. 
+                Membangun aplikasi web yang fungsional, efisien, dan scalable.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="#projects" class="px-8 py-3 bg-primary rounded-full font-semibold hover:bg-indigo-500 transition-all duration-300 transform hover:scale-105">
+                    Lihat Portofolio
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#contact" class="px-8 py-3 glass rounded-full font-semibold border border-primary/50 hover:bg-primary/20 transition-all duration-300">
+                    Hubungi Saya
+                </a>
             </div>
-        </section>
-        
-        <!-- Projects Section -->
-        <section id="projects" class="py-24 px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Portofolio <span class="text-primary">Proyek</span></h2>
-                    <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Beberapa proyek yang telah saya kerjakan</p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="glass-card rounded-xl overflow-hidden group">
-                        <div class="h-48 bg-gradient-to-br from-primary/30 to-purple-600/30 flex items-center justify-center">
-                            <i class="fab fa-laravel text-6xl text-primary/50"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Sistem Manajemen Proyek</h3>
-                            <p class="text-gray-400 text-sm mb-4">Aplikasi manajemen proyek dengan fitur task assignment, progress tracking, dan report generation. Dibangun dengan Laravel 11 & MySQL.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs px-2 py-1 glass rounded">Laravel</span>
-                                <span class="text-xs px-2 py-1 glass rounded">Blade</span>
-                                <span class="text-xs px-2 py-1 glass rounded">MySQL</span>
-                                <span class="text-xs px-2 py-1 glass rounded">Tailwind</span>
-                            </div>
-                            <a href="https://laporin-aja-id.vercel.app/" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
-                                Lihat Detail <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="glass-card rounded-xl overflow-hidden group">
-                        <div class="h-48 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center">
-                            <i class="fab fa-python text-6xl text-primary/50"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Web Scraper & Automation</h3>
-                            <p class="text-gray-400 text-sm mb-4">Tool scraping data otomatis dari berbagai website dengan fitur export ke Excel/CSV. Menggunakan Python, BeautifulSoup, dan Pandas.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs px-2 py-1 glass rounded">Python</span>
-                                <span class="text-xs px-2 py-1 glass rounded">BeautifulSoup</span>
-                                <span class="text-xs px-2 py-1 glass rounded">Pandas</span>
-                                <span class="text-xs px-2 py-1 glass rounded">Selenium</span>
-                            </div>
-                            <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
-                                Lihat Detail <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="glass-card rounded-xl overflow-hidden group">
-                        <div class="h-48 bg-gradient-to-br from-green-500/30 to-emerald-500/30 flex items-center justify-center">
-                            <i class="fas fa-store text-6xl text-primary/50"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">E-Commerce API</h3>
-                            <p class="text-gray-400 text-sm mb-4">RESTful API untuk aplikasi e-commerce dengan fitur authentication, product management, shopping cart, dan order processing.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs px-2 py-1 glass rounded">Laravel</span>
-                                <span class="text-xs px-2 py-1 glass rounded">API Resource</span>
-                                <span class="text-xs px-2 py-1 glass rounded">JWT Auth</span>
-                                <span class="text-xs px-2 py-1 glass rounded">Postman</span>
-                            </div>
-                            <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
-                                Lihat Detail <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-12">
-                    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 glass rounded-full hover:bg-white/10 transition-all duration-300">
-                        Lihat Semua Proyek
-                        <i class="fas fa-arrow-right text-sm"></i>
-                    </a>
-                </div>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-2xl hover:text-primary transition-colors duration-300">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="text-2xl hover:text-primary transition-colors duration-300">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="text-2xl hover:text-primary transition-colors duration-300">
+                    <i class="fab fa-twitter"></i>
+                </a>
             </div>
-        </section>
-        
-        <!-- Certificate Section -->
-        <section id="certificates" class="py-24 px-6 bg-black/20">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Sertifikat</h2>
-                    <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-                    <p class="text-gray-400 mt-3">Pelatihan yang pernah saya ikuti</p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <!-- Certificate 1 - Ganti dengan data Anda -->
-                    <div class="glass-card rounded-xl p-4 flex items-center gap-4 hover:border-primary/50 transition-all duration-300">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/30 to-purple-500/30 flex items-center justify-center">
-                            <i class="fas fa-certificate text-xl text-primary"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 1</h4>
-                            <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Certificate 2 -->
-                    <div class="glass-card rounded-xl p-4 flex items-center gap-4 hover:border-primary/50 transition-all duration-300">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/30 to-purple-500/30 flex items-center justify-center">
-                            <i class="fas fa-certificate text-xl text-primary"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 2</h4>
-                            <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Certificate 3 -->
-                    <div class="glass-card rounded-xl p-4 flex items-center gap-4 hover:border-primary/50 transition-all duration-300">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/30 to-purple-500/30 flex items-center justify-center">
-                            <i class="fas fa-certificate text-xl text-primary"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 3</h4>
-                            <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Certificate 4 -->
-                    <div class="glass-card rounded-xl p-4 flex items-center gap-4 hover:border-primary/50 transition-all duration-300">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/30 to-purple-500/30 flex items-center justify-center">
-                            <i class="fas fa-certificate text-xl text-primary"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 4</h4>
-                            <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Certificate 5 -->
-                    <div class="glass-card rounded-xl p-4 flex items-center gap-4 hover:border-primary/50 transition-all duration-300">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/30 to-purple-500/30 flex items-center justify-center">
-                            <i class="fas fa-certificate text-xl text-primary"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 5</h4>
-                            <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Certificate 6 (Bonus slot - bisa diisi nanti) -->
-                    <div class="glass-card rounded-xl p-4 flex items-center gap-4 opacity-60 border border-dashed border-white/20">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">
-                            <i class="fas fa-plus text-xl text-gray-500"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-sm md:text-base text-gray-400">Slot Sertifikat</h4>
-                            <p class="text-xs text-gray-500">Siap diisi</p>
-                        </div>
-                    </div>
-                </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Tentang <span class="text-primary">Saya</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
-        </section>
-        
-        <!-- Contact Section -->
-        <section id="contact" class="py-24 px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Hubungi <span class="text-primary">Saya</span></h2>
-                    <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                    <p class="text-gray-400 mt-4">Tertarik untuk berkolaborasi? Mari diskusikan proyek Anda</p>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 animate-slide-up">
+                    <h3 class="text-2xl font-semibold">Web Developer</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Saya adalah <span class="text-primary font-semibold">Web Developer</span> yang berfokus pada pengembangan aplikasi menggunakan 
+                        <strong>Laravel</strong> untuk backend dan <strong>Python</strong> untuk berbagai keperluan seperti automation, data processing, dan API development.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Saya memiliki pemahaman yang solid tentang konsep MVC, RESTful API, database design, dan version control dengan Git. 
+                        Setiap kode yang saya tulis mengutamakan clean code, security, dan maintainability.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Saya selalu mengikuti perkembangan teknologi terbaru di ekosistem Laravel dan Python untuk memastikan solusi yang saya bangun tetap modern dan relevan.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-4 pt-4">
+                        <div class="glass-card rounded-lg p-4 text-center">
+                            <div class="text-3xl text-primary font-bold">10+</div>
+                            <div class="text-sm text-gray-400">Proyek Selesai</div>
+                        </div>
+                        <div class="glass-card rounded-lg p-4 text-center">
+                            <div class="text-3xl text-primary font-bold">100%</div>
+                            <div class="text-sm text-gray-400">Fokus Kualitas</div>
+                        </div>
+                        <div class="glass-card rounded-lg p-4 text-center">
+                            <div class="text-3xl text-primary font-bold">24/7</div>
+                            <div class="text-sm text-gray-400">Support</div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="glass-card rounded-2xl p-8 md:p-12">
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Nama Lengkap</label>
-                                <input type="text" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Email</label>
-                                <input type="email" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors">
-                            </div>
-                        </div>
+                <div class="glass-card rounded-2xl p-8 animate-slide-up">
+                    <h3 class="text-2xl font-semibold mb-6">Tech Stack</h3>
+                    
+                    <div class="space-y-5">
                         <div>
-                            <label class="block text-sm font-medium mb-2">Subjek</label>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fab fa-laravel text-red-400 mr-2"></i> Laravel / PHP</span>
+                                <span class="text-primary">Advanced</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fab fa-python text-blue-400 mr-2"></i> Python</span>
+                                <span class="text-primary">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fas fa-database text-yellow-400 mr-2"></i> MySQL / PostgreSQL</span>
+                                <span class="text-primary">Advanced</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fab fa-html5 text-orange-500 mr-2"></i> HTML, CSS, Blade</span>
+                                <span class="text-primary">Advanced</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span><i class="fab fa-git-alt text-orange-500 mr-2"></i> Git & Version Control</span>
+                                <span class="text-primary">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-6 bg-black/20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Bidang <span class="text-primary">Keahlian</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-4">Apa yang bisa saya kerjakan untuk Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fab fa-laravel"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Laravel Development</h3>
+                    <p class="text-gray-400 text-sm">Membangun aplikasi web dengan Laravel mulai dari CRUD, authentication, RESTful API, hingga sistem yang kompleks dengan Eloquent ORM.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Python Development</h3>
+                    <p class="text-gray-400 text-sm">Membuat script automation, web scraping, data processing, REST API dengan Flask/Django, dan berbagai utility Python lainnya.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Database Design</h3>
+                    <p class="text-gray-400 text-sm">Merancang skema database yang efisien, normalisasi, optimasi query, dan migrasi database menggunakan Laravel migration.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">API Development</h3>
+                    <p class="text-gray-400 text-sm">Membangun RESTful API dengan Laravel atau Python, dokumentasi API, dan integrasi dengan berbagai platform.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Web Security</h3>
+                    <p class="text-gray-400 text-sm">Implementasi best practice keamanan web: CSRF protection, XSS prevention, SQL injection prevention, dan authentication yang aman.</p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6 text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Performance</h3>
+                    <p class="text-gray-400 text-sm">Optimasi performa aplikasi, caching, lazy loading, dan database indexing untuk kecepatan loading yang optimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section dengan Thumbnail Gambar -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Portofolio <span class="text-primary">Proyek</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Beberapa proyek yang telah saya kerjakan</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 - Dengan gambar yang Anda kirim -->
+                <div class="glass-card rounded-xl overflow-hidden group">
+                    <!-- Ganti src="image.png" dengan lokasi file gambar Anda -->
+                    <img src="foto/Screenshot 2026-04-22 171547.png" 
+                         alt="Sistem Manajemen Proyek" 
+                         class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Sistem Manajemen Proyek</h3>
+                        <p class="text-gray-400 text-sm mb-4">Aplikasi manajemen proyek dengan fitur task assignment, progress tracking, dan report generation. Dibangun dengan Laravel 11 & MySQL.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 glass rounded">Laravel</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Blade</span>
+                            <span class="text-xs px-2 py-1 glass rounded">MySQL</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Tailwind</span>
+                        </div>
+                        <a href="https://laporin-aja-id.vercel.app/" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
+                            Lihat Detail <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="glass-card rounded-xl overflow-hidden group">
+                    <img src="https://placehold.co/600x400/3b82f6/white?text=Web+Scraper" 
+                         alt="Web Scraper & Automation" 
+                         class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Web Scraper & Automation</h3>
+                        <p class="text-gray-400 text-sm mb-4">Tool scraping data otomatis dari berbagai website dengan fitur export ke Excel/CSV. Menggunakan Python, BeautifulSoup, dan Pandas.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 glass rounded">Python</span>
+                            <span class="text-xs px-2 py-1 glass rounded">BeautifulSoup</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Pandas</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Selenium</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
+                            Lihat Detail <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="glass-card rounded-xl overflow-hidden group">
+                    <img src="https://placehold.co/600x400/10b981/white?text=E-Commerce+API" 
+                         alt="E-Commerce API" 
+                         class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce API</h3>
+                        <p class="text-gray-400 text-sm mb-4">RESTful API untuk aplikasi e-commerce dengan fitur authentication, product management, shopping cart, dan order processing.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 glass rounded">Laravel</span>
+                            <span class="text-xs px-2 py-1 glass rounded">API Resource</span>
+                            <span class="text-xs px-2 py-1 glass rounded">JWT Auth</span>
+                            <span class="text-xs px-2 py-1 glass rounded">Postman</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-indigo-400 text-sm inline-flex items-center gap-1">
+                            Lihat Detail <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center gap-2 px-6 py-3 glass rounded-full hover:bg-white/10 transition-all duration-300">
+                    Lihat Semua Proyek
+                    <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certificate Section -->
+    <section id="certificates" class="py-24 px-6 bg-black/20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">Sertifikat</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-3">Pelatihan yang pernah saya ikuti</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Certificate 1 -->
+                <div class="glass-card rounded-xl p-3 flex items-center gap-4 hover:border-primary/50 transition-all duration-300 cursor-pointer" onclick="window.open('#', '_blank')">
+                    <img src="https://placehold.co/60x60/6366f1/white?text=Cert" 
+                         alt="Sertifikat" 
+                         class="w-14 h-14 rounded-lg object-cover">
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 1</h4>
+                        <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
+                    </div>
+                    <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
+                </div>
+                
+                <!-- Certificate 2 -->
+                <div class="glass-card rounded-xl p-3 flex items-center gap-4 hover:border-primary/50 transition-all duration-300 cursor-pointer" onclick="window.open('#', '_blank')">
+                    <img src="https://placehold.co/60x60/10b981/white?text=Cert" 
+                         alt="Sertifikat" 
+                         class="w-14 h-14 rounded-lg object-cover">
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 2</h4>
+                        <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
+                    </div>
+                    <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
+                </div>
+                
+                <!-- Certificate 3 -->
+                <div class="glass-card rounded-xl p-3 flex items-center gap-4 hover:border-primary/50 transition-all duration-300 cursor-pointer" onclick="window.open('#', '_blank')">
+                    <img src="https://placehold.co/60x60/8b5cf6/white?text=Cert" 
+                         alt="Sertifikat" 
+                         class="w-14 h-14 rounded-lg object-cover">
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 3</h4>
+                        <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
+                    </div>
+                    <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
+                </div>
+                
+                <!-- Certificate 4 -->
+                <div class="glass-card rounded-xl p-3 flex items-center gap-4 hover:border-primary/50 transition-all duration-300 cursor-pointer" onclick="window.open('#', '_blank')">
+                    <img src="https://placehold.co/60x60/ef4444/white?text=Cert" 
+                         alt="Sertifikat" 
+                         class="w-14 h-14 rounded-lg object-cover">
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 4</h4>
+                        <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
+                    </div>
+                    <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
+                </div>
+                
+                <!-- Certificate 5 -->
+                <div class="glass-card rounded-xl p-3 flex items-center gap-4 hover:border-primary/50 transition-all duration-300 cursor-pointer" onclick="window.open('#', '_blank')">
+                    <img src="https://placehold.co/60x60/f59e0b/white?text=Cert" 
+                         alt="Sertifikat" 
+                         class="w-14 h-14 rounded-lg object-cover">
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-sm md:text-base">Nama Sertifikat 5</h4>
+                        <p class="text-xs text-gray-400">Penyelenggara · Tahun</p>
+                    </div>
+                    <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
+                </div>
+                
+                <!-- Certificate 6 (Bonus slot) -->
+                <div class="glass-card rounded-xl p-3 flex items-center gap-4 opacity-60 border border-dashed border-white/20">
+                    <div class="w-14 h-14 rounded-lg bg-white/5 flex items-center justify-center">
+                        <i class="fas fa-plus text-xl text-gray-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-sm md:text-base text-gray-400">Slot Sertifikat</h4>
+                        <p class="text-xs text-gray-500">Siap diisi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Hubungi <span class="text-primary">Saya</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-4">Tertarik untuk berkolaborasi? Mari diskusikan proyek Anda</p>
+            </div>
+            
+            <div class="glass-card rounded-2xl p-8 md:p-12">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Nama Lengkap</label>
                             <input type="text" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium mb-2">Pesan</label>
-                            <textarea rows="5" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors" placeholder="Ceritakan tentang proyek atau kebutuhan Anda..."></textarea>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors">
                         </div>
-                        <button type="submit" class="w-full py-3 bg-primary rounded-lg font-semibold hover:bg-indigo-500 transition-all duration-300 transform hover:scale-105">
-                            Kirim Pesan
-                            <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
-                </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Subjek</label>
+                        <input type="text" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Pesan</label>
+                        <textarea rows="5" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors" placeholder="Ceritakan tentang proyek atau kebutuhan Anda..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-primary rounded-lg font-semibold hover:bg-indigo-500 transition-all duration-300 transform hover:scale-105">
+                        Kirim Pesan
+                        <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-white/10">
+        <div class="max-w-6xl mx-auto text-center text-gray-400 text-sm">
+            <p>&copy; 2026 Jaffray | Web Developer (Laravel & Python)</p>
+            <p class="text-xs mt-2 text-gray-500">Available for freelance & collaboration</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-        <!-- Footer -->
-        <footer class="py-8 px-6 border-t border-white/10">
-            <div class="max-w-6xl mx-auto text-center text-gray-400 text-sm">
-                <p>&copy; 2026 Jaffray | Web Developer (Laravel & Python)</p>
-                <p class="text-xs mt-2 text-gray-500">Available for freelance & collaboration</p>
-            </div>
-        </footer>
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
         
-        <!-- JavaScript -->
-        <script>
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    mobileMenu.classList.add('hidden');
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            window.addEventListener('scroll', () => {
-                const navbar = document.getElementById('navbar');
-                if (window.scrollY > 50) {
-                    navbar.classList.add('bg-dark/90');
-                } else {
-                    navbar.classList.remove('bg-dark/90');
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden');
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
-            
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda.');
-                    contactForm.reset();
-                });
+        });
+        
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-dark/90');
+            } else {
+                navbar.classList.remove('bg-dark/90');
             }
-            
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            document.querySelectorAll('.animate-slide-up').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.6s ease-out';
-                observer.observe(el);
+        });
+        
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda.');
+                contactForm.reset();
             });
-        </script>
-    </body>
-    </html>
+        }
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
